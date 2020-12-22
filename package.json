@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node out/server.js",
-    "db": "node out/db.js"
+    "db": "node out/db.js",
+    "postinstall": "tsc"
   },
   "keywords": [],
   "author": "",

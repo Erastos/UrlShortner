@@ -1,5 +1,4 @@
 // const mongoose = require("mongoose")
-import { url } from "inspector"
 import mongoose from "mongoose"
 import {Schema, model} from "mongoose"
 

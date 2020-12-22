@@ -22,14 +22,6 @@ let urlSchema = new Schema({
 
 let urlModel = model("Url", urlSchema)
 
-let testUrl = {token: "og", url: "pond5.com"}
-
-let testInstance = new urlModel(testUrl)
-
-testInstance.save((err) => {
-    console.log(err);
-})
-
 export async function getUrl(token, callback) {
    urlModel.findOne({"token": token}, (error, data) => {
        callback(data)

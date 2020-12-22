@@ -4,7 +4,7 @@ import {getUrl, addUrl, deleteUrl} from "./db"
 import bodyParser from 'body-parser'
 
 let app = express()
-let port = 80;
+let port = 3000;
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))

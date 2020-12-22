@@ -2,7 +2,15 @@
 import mongoose from "mongoose"
 import {Schema, model} from "mongoose"
 
-mongoose.connect("mongodb://localhost/urlShortner", {
+let url;
+
+if (process.env.MONGODB_URL) {
+    url = process.env.MONGODB_URL
+} else {
+    url = "mongodb://localhost/urlShortner"
+}
+
+mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).catch(error => console.log(error))

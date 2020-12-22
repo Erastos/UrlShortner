@@ -1,19 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
     <title>URL Shortner</title>
 </head>
-<body>
-    <h1>URL Shortner</h1>
-    <form action="/add" method="POST">
-        <label for="token">Token</label>
-        <input type="text" name="token" id="tokenInput">
-        <label for="url">URL</label>
-        <input type="text" name="url" id="urlInput">
 
+<!-- <form action="/add" method="POST">
+    <div class="row">
+        <div class="col">
+            <label for="token">Token:</label>
+            <input type="text" name="token" id="tokenInput">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="url">URL:</label>
+            <input type="text" name="url" id="urlInput">
+        </div>
+    </div>
+    <div class="row">
         <input type="submit" value="Submit">
-    </form>
+    </div>
+</form> -->
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg">
+                <h1>URL Shortner</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <form action="/add" method="post">
+                    <div class="form-group">
+                        <label for="token">Token</label>
+                        <input type="text" name="token" id="token" class="form-control" aria-describedby="tokenHelp">
+                        <small id="tokenHelp" class="text-muted">Short String that Refers to URL</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="url">URL</label>
+                        <input type="text" name="url" id="url" class="form-control" aria-describedby="urlHelp">
+                        <small id="urlHelp" class="text-muted">URL to Shorten</small>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

@@ -15,7 +15,11 @@ app.use(express.static('public'))
 
 app.get("/:token", async (req, res) => {
     getUrl(req.params.token, (data) => {
-        res.redirect('http://' + data.url.toString())
+        if (data === null) {
+            res.redirect("/")
+        } else {
+            res.redirect('http://' + data.url.toString())
+        }
     })
 })
 

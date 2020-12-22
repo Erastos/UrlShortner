@@ -1,0 +1,15 @@
+{"compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "ES6",
+    "skipLibCheck": true,
+    "outDir": "out"
+  },
+  "files": [
+    "src/server.ts",
+    "src/db.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

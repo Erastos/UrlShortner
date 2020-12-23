@@ -1,13 +1,13 @@
 // const express = require("express")
 import express from "express";
-import {getUrl, addUrl, deleteUrl} from "./db"
+import { getUrl, addUrl, deleteUrl } from "./db"
 import bodyParser from 'body-parser'
 
 let app = express()
 let port = process.env.PORT || 3000;
 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 
 app.use(express.static('public'))
@@ -25,11 +25,13 @@ app.get("/:token", async (req, res) => {
 
 app.post("/add", async (req, res) => {
     addUrl(req.body.token, req.body.url, (data) => {
+        let queryString;
         if (data === null) {
-            res.redirect("/")
+            queryString = "?status=0"
         } else {
-            res.send(data)
+            queryString = "?status=1"
         }
+        res.redirect("/" + queryString)
     })
 })
 

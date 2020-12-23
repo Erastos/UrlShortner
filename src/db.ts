@@ -16,7 +16,7 @@ mongoose.connect(url, {
 }).catch(error => console.log(error))
 
 let urlSchema = new Schema({
-    token: String,
+    token: {type: String, unique: true},
     url: String
 })
 

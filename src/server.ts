@@ -6,6 +6,8 @@ import bodyParser from 'body-parser'
 let app = express()
 let port = process.env.PORT || 3000;
 
+let simpleURLRegex = /(?:http?s:\/\/)?(.*)/
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -24,7 +26,7 @@ app.get("/:token", async (req, res) => {
 })
 
 app.post("/add", async (req, res) => {
-    addUrl(req.body.token, req.body.url, (data) => {
+    addUrl(req.body.token, simpleURLRegex.exec(req.body.url)[1], (data) => {
         let queryString;
         if (data === null) {
             queryString = "?status=0"

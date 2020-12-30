@@ -1,7 +1,10 @@
 // const express = require("express")
+import dotenv from "dotenv"
 import express from "express";
 import { getUrl, addUrl, deleteUrl } from "./db"
 import bodyParser from 'body-parser'
+
+dotenv.config()
 
 let app = express()
 let port = process.env.PORT || 3000;

@@ -1,4 +1,3 @@
-// const mongoose = require("mongoose")
 import mongoose from "mongoose"
 import {Schema, model} from "mongoose"
 
@@ -29,6 +28,10 @@ export async function getUrl(token, callback) {
 }
 
 export async function addUrl(token, url, data) {
+    if (token === null || token === "" || url === null || url === "") {
+        data({"status": "One of the fields was empty"})
+        return
+    }
     let urlObject = {"token": token, "url": url}
     let urlInstance = new urlModel(urlObject)
     urlInstance.save((err) => {
